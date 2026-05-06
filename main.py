@@ -35,8 +35,7 @@ conn = sqlite3.connect("data.sqlite")
 df_zero_emp = """
 SELECT 
     o.officeCode,
-    o.city,
-    o.phone
+    o.city
 FROM 
     offices o
 LEFT JOIN 
@@ -44,9 +43,10 @@ LEFT JOIN
 WHERE 
     e.employeeNumber IS NULL;
 """
-df_zero_emp = pd.read_sql(df_zero_emp, conn)
 
+df_zero_emp = pd.read_sql(df_zero_emp, conn)
 df_zero_emp.head()
+
 
 # CodeGrade step3
 # Replace None with your code
